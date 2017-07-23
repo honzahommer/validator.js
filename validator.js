@@ -1083,6 +1083,28 @@ function isDataURI(str) {
   return dataURI.test(str);
 }
 
+var transliteration = function transliteration(char) {
+  return '0123456789.ABCDEFGH..JKLMN.P.R..STUVWXYZ'.indexOf(char) % 10;
+};
+
+var weights = function weights(index) {
+  return [8, 7, 6, 5, 4, 3, 2, 10, 0, 9, 8, 7, 6, 5, 4, 3, 2][index];
+};
+
+function isVIN(str) {
+  assertString(str);
+
+  var vin = str.toUpperCase().split('');
+
+  var mod = vin.map(function (char, i) {
+    return transliteration(char) * weights(i);
+  }).reduce(function (total, value) {
+    return total + value;
+  }, 0) % 11;
+
+  return mod === 10 ? vin[8] === 'X' : vin[8] === mod.toString();
+}
+
 function ltrim(str, chars) {
   assertString(str);
   var pattern = chars ? new RegExp('^[' + chars + ']+', 'g') : /^\s+/g;
@@ -1316,6 +1338,7 @@ var validator = {
   isISO8601: isISO8601,
   isBase64: isBase64,
   isDataURI: isDataURI,
+  isVIN: isVIN,
   ltrim: ltrim,
   rtrim: rtrim,
   trim: trim,

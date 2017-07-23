@@ -3986,4 +3986,12 @@ describe('Validators', function () {
     });
     /* eslint-enable max-len */
   });
+
+  it('should validate VIN after 1980', function () {
+    test({
+      validator: 'isVIN',
+      valid: ['wvwuk63b92p546818', 'wvwuk63b92p546818'],
+      invalid: ['WVWUK63B82P546818'],
+    });
+  });
 });

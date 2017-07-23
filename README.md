@@ -99,6 +99,7 @@ Passing anything other than a string is an error.
 - **isUppercase(str)** - check if the string is uppercase.
 - **isVariableWidth(str)** - check if the string contains a mixture of full and half-width chars.
 - **isWhitelisted(str, chars)** - checks characters if they appear in the whitelist.
+- **isVIN(str)** - checks if the string has a valid check-digit calculation.
 - **matches(str, pattern [, modifiers])** - check if string matches the pattern. Either `matches('foo', /foo/i)` or `matches('foo', 'foo', 'i')`.
 
 ### Sanitizers
