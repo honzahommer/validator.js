@@ -68,6 +68,8 @@ import isISO8601 from './lib/isISO8601';
 import isBase64 from './lib/isBase64';
 import isDataURI from './lib/isDataURI';
 
+import isVIN from './lib/isVIN';
+
 import ltrim from './lib/ltrim';
 import rtrim from './lib/rtrim';
 import trim from './lib/trim';
@@ -136,6 +138,7 @@ const validator = {
   isISO8601,
   isBase64,
   isDataURI,
+  isVIN,
   ltrim,
   rtrim,
   trim,
