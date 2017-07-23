@@ -52,6 +52,10 @@ var _isFQDN = require('./lib/isFQDN');
 
 var _isFQDN2 = _interopRequireDefault(_isFQDN);
 
+var _isHostname = require('./lib/isHostname');
+
+var _isHostname2 = _interopRequireDefault(_isHostname);
+
 var _isBoolean = require('./lib/isBoolean');
 
 var _isBoolean2 = _interopRequireDefault(_isBoolean);
@@ -266,6 +270,7 @@ var validator = {
   isMACAddress: _isMACAddress2.default,
   isIP: _isIP2.default,
   isFQDN: _isFQDN2.default,
+  isHostname: _isHostname2.default,
   isBoolean: _isBoolean2.default,
   isAlpha: _isAlpha2.default,
   isAlphanumeric: _isAlphanumeric2.default,
